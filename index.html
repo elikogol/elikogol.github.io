@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Scan Document</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/scanner.js/1.0.1/scanner.min.js"></script>
+</head>
+<body>
+<div id="scan-results"></div>
+<button onclick="scanDocument()">Scan Document</button>
+<script>
+function scanDocument() {
+  var scanner = new Scanner();
+  scanner.onScanComplete = function(result) {
+    document.getElementById("scan-results").innerHTML = "<img src='" + result.image + "'>";
+  };
+  scanner.scan();
+}
+</script>
+</body>
+</html>
